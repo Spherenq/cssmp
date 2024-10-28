@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: cssmp
+
+    liquibase:
+      change-log: classpath:db/changelog/master.yaml
+      enabled: true
+
+# MyBatis??
+#mybatis:
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    banner: off
+  #  # ???????
+  #  typeAliasesPackage: com.focus.**.domain
+  #  # ??mapper?????????mapper.xml????
+  #  mapperLocations: classpath*:mapper/**/*Mapper.xml
+  mapper-locations: classpath*:mapper/**/*Mapper.xml
+  type-aliases-package: com.revan.**.domain
+
+server:
+  servlet:
+    context-path: /ssmp
+  shutdown: graceful
